@@ -84,3 +84,12 @@ Lancer un fichier ou un test précis :
 pytest test_ex1.py -v
 pytest test_ex2.py::test_books_toscrape_listing_charge -v
 ```
+
+## CI (GitHub Actions)
+
+Une workflow GitHub Actions exécute automatiquement les tests à chaque push et à chaque pull request sur `main` / `master`.
+
+- Fichier : `.github/workflows/tests.yml`
+- Étapes : checkout → Python 3.12 → installation de Chrome et ChromeDriver → `pip install -r requirements.txt` → `pytest -v`
+
+Une fois le dépôt poussé sur GitHub, les runs sont visibles dans l’onglet **Actions**.
