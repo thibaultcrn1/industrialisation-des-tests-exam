@@ -18,15 +18,6 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Chrome and ChromeDriver
-        id: chrome
-        uses: browser-actions/setup-chrome@v2
-        with:
-          install-chromedriver: true
-
-      - name: Add ChromeDriver to PATH
-        run: echo "$(dirname ${{ steps.chrome.outputs['chromedriver-path'] }})" >> $GITHUB_PATH
-
       - name: Install dependencies
         run: pip install -r requirements.txt
 
