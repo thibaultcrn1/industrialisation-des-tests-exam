@@ -51,5 +51,7 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: main-${{ github.run_number }}
+          name: Release main-${{ github.run_number }}
           generate_release_notes: true
           files: test-reports/**/*.xml
