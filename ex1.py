@@ -24,6 +24,9 @@ retype_input.send_keys(PASSWORD)
 email_input = driver.find_element(By.NAME, "email")
 email_input.send_keys(EMAIL)
 
+submit_button = driver.find_element(By.NAME, "wpCreateaccount")
+submit_button.click()
+
 assert username_input.get_attribute("value") == USERNAME, (
     f"Username invalide: attendu '{USERNAME}', reçu '{username_input.get_attribute('value')}'"
 )
