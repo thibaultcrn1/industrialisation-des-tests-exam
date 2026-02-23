@@ -91,6 +91,7 @@ Une workflow GitHub Actions exécute automatiquement les tests à chaque push et
 
 - Fichier : `.github/workflows/tests.yml`
 - Matrice Python : `3.10`, `3.11`, `3.12`
-- Étapes : checkout → setup Python (via la matrice) → `pip install -r requirements.txt` → `pytest -v`
+- Rapport de test : génération d’un fichier JUnit XML par version Python (`test-report-<version>.xml`)
+- Étapes : checkout → setup Python (via la matrice) → `pip install -r requirements.txt` → `pytest -v --junitxml=...` → upload de l’artifact
 
 Une fois le dépôt poussé sur GitHub, les runs sont visibles dans l’onglet **Actions**.
