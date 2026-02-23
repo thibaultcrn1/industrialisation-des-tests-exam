@@ -90,6 +90,7 @@ pytest test_ex2.py::test_books_toscrape_listing_charge -v
 Une workflow GitHub Actions exécute automatiquement les tests à chaque push et à chaque pull request sur `main` / `master`.
 
 - Fichier : `.github/workflows/tests.yml`
-- Étapes : checkout → Python 3.12 → installation de Chrome et ChromeDriver → `pip install -r requirements.txt` → `pytest -v`
+- Matrice Python : `3.10`, `3.11`, `3.12`
+- Étapes : checkout → setup Python (via la matrice) → `pip install -r requirements.txt` → `pytest -v`
 
 Une fois le dépôt poussé sur GitHub, les runs sont visibles dans l’onglet **Actions**.
