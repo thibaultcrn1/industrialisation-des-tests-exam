@@ -93,13 +93,6 @@ Une workflow GitHub Actions exécute automatiquement les tests à chaque push et
 - Matrice Python : `3.10`, `3.11`, `3.12`
 - Rapport de test : génération d’un fichier JUnit XML par version Python (`test-report-<version>.xml`)
 - Étapes : checkout → setup Python (via la matrice) → `pip install -r requirements.txt` → `pytest -v --junitxml=...` → upload de l’artifact
-- Déploiement release : création automatique d’une GitHub Release lors d’un push de tag `v*` (ex: `v1.0.0`)
+- Déploiement release : création automatique d’une GitHub Release à chaque push sur `main`
 
 Une fois le dépôt poussé sur GitHub, les runs sont visibles dans l’onglet **Actions**.
-
-Exemple de publication d’une release :
-
-```bash
-git tag v1.0.0
-git push origin v1.0.0
-```
